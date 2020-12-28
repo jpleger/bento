@@ -45,7 +45,7 @@
         <span class="flex-grow">{{ .Site.Params.authorBio | safeHTML }}</span>
 
         {{ $title := .Title }}
-        {{ $url := printf "%s" .URL | absLangURL }}
+        {{ $url := printf "%s" .Permalink | absLangURL }}
         {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
         <a href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Params.twitter }}{{ . }}{{ end }}" class="flex items-center px-3 py-2 text-xs font-bold text-white no-underline rounded-md bg-twitter hover:color-white hover:opacity-75">
           <svg class="w-4 h-4 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
