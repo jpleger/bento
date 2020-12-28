@@ -1,29 +1,29 @@
 {{if and (.Site.Params.cover) (.IsHome)}}
   {{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
-    <header id="header" class="header flex w-full m-0 bg-cover bg-top-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url({{.Site.Params.cover}})">
+    <header id="header" class="flex w-full m-0 bg-cover header bg-top-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url({{.Site.Params.cover}})">
   {{ else }}
-    <header id="header" class="header flex w-full m-0 bg-cover bg-top-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url({{.Site.Params.cover | absURL}})">
+    <header id="header" class="flex w-full m-0 bg-cover header bg-top-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)), url({{.Site.Params.cover | absURL}})">
   {{ end }}
-    <div class="max-w-7xl mx-auto p-6 flex flex-col items-center w-full relative">
-      <div class="block lg:hidden text-white self-end mx-2">
+    <div class="relative flex flex-col items-center w-full p-6 mx-auto max-w-7xl">
+      <div class="self-end block mx-2 text-white lg:hidden">
         {{ partial "nav-menu-buttons.html" . }}
       </div>
 
-      <div id="nav-menu" class="absolute lg:p-6 hidden lg:block self-end text-white rounded-md bg-black shadow lg:bg-transparent lg:shadow-none">
+      <div id="nav-menu" class="absolute self-end hidden text-white bg-black rounded-md shadow lg:p-6 lg:block lg:bg-transparent lg:shadow-none">
         <nav>
           {{ partial "nav-links.html" . }}
         </nav>
       </div>
 
-      <div class="flex-grow w-full flex flex-col justify-center items-center">
+      <div class="flex flex-col items-center justify-center flex-grow w-full">
         {{if .Site.Params.avatar}}
           {{if or (eq (substr .Site.Params.avatar 0 7) "http://") (eq (substr .Site.Params.avatar 0 8) "https://")}}
-            <img alt="{{ .Site.Title }}" class="w-24 h-24 lg:w-32 lg:h-32 rounded-full mb-3" src="{{.Site.Params.avatar}}">
+            <img alt="{{ .Site.Title }}" class="w-24 h-24 mb-3 rounded-full lg:w-32 lg:h-32" src="{{.Site.Params.avatar}}">
           {{ else }}
-            <img alt="{{ .Site.Title }}" class="w-24 h-24 lg:w-32 lg:h-32 rounded-full mb-3" src="{{.Site.Params.avatar | absURL}}">
+            <img alt="{{ .Site.Title }}" class="w-24 h-24 mb-3 rounded-full lg:w-32 lg:h-32" src="{{.Site.Params.avatar | absURL}}">
           {{ end }}
         {{ end }}
-        <a href="{{ .Site.Home.Permalink }}" class="tracking-tighter text-4xl font-semibold flex flex-shrink-0 text-center px-3 bg-white focus:text-gray-300 opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+        <a href="{{ .Site.Home.Permalink }}" class="flex flex-shrink-0 px-3 text-4xl font-semibold tracking-tighter text-center transition duration-300 ease-in-out bg-white opacity-75 focus:text-gray-300 hover:opacity-100">
           {{ .Site.Title }}
         </a>
 
@@ -34,22 +34,22 @@
     </div>
   </header>
 {{else}}
-  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 backdrop-filter-blur">
-    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
-      <a href="{{ .Site.Home.Permalink }}" class="tracking-tighter leading-10 text-3xl font-semibold text-gray-600 flex flex-shrink-0">
+  <header id="header" class="fixed z-10 w-full m-0 transition-all duration-300 ease-in-out border-t-4 border-gray-300 backdrop-filter-blur">
+    <div id="header-container" class="relative flex flex-wrap items-center justify-between p-6 mx-auto max-w-7xl lg:flex-no-wrap">
+      <a href="{{ .Site.Home.Permalink }}" class="flex flex-shrink-0 text-3xl font-semibold leading-10 tracking-tighter text-gray-600">
         {{ .Site.Title }}
       </a>
 
-      <div class="block lg:hidden mx-2">
+      <div class="block mx-2 lg:hidden">
         {{ partial "nav-menu-buttons.html" . }}
       </div>
 
-      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
-        <nav id="nav-social-links" class="p-4 lg:p-0 text-gray-600 hidden lg:block lg:order-last w-full lg:w-auto lg:ml-3">
+      <div class="absolute flex flex-col items-center bg-white rounded-md shadow right-8 top-16 lg:relative lg:right-0 lg:top-0 lg:flex-row lg:bg-transparent lg:shadow-none">
+        <nav id="nav-social-links" class="hidden w-full p-4 text-gray-600 lg:p-0 lg:block lg:order-last lg:w-auto lg:ml-3">
           {{ partial "nav-social-links.html" . }}
         </nav>
 
-        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+        <nav id="nav-menu" class="hidden w-full p-4 text-gray-600 lg:p-0 lg:block lg:w-auto">
           {{ partial "nav-links.html" . }}
         </nav>
       </div>

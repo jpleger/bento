@@ -1,13 +1,13 @@
 <aside class="flex">
   {{ with .NextInSection }}
-    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out" href="{{ .RelPermalink }}">
-      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+    <a class="flex flex-col items-center w-full px-3 no-underline transition duration-300 ease-in-out rounded-md md:w-1/2 py-7 hover:bg-white" href="{{ .RelPermalink }}">
+      <span class="px-3 py-2 mb-2 text-xs font-bold uppercase border rounded-md border-gray-6">Read this next</span>
       <span class="text-center">{{.Title}}</span>
     </a>
   {{ end }}
   {{ with .PrevInSection }}
-    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out" href="{{ .RelPermalink }}">
-      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+    <a class="flex flex-col items-center w-full px-3 no-underline transition duration-300 ease-in-out rounded-md md:w-1/2 py-7 hover:bg-white" href="{{ .RelPermalink }}">
+      <span class="px-3 py-2 mb-2 text-xs font-bold uppercase border rounded-md border-gray-6">You might enjoy</span>
       <span class="text-center">{{.Title}}</span>
     </a>
   {{ end }}

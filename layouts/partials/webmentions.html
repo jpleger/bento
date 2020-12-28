@@ -1,11 +1,11 @@
 <div id="summary" class="flex items-center">
-  <button id="button-likes-{{ md5 .Permalink }}" class="flex items-center mr-6 p-3 bg-gray-100 hover:bg-white transition duration-300 ease-in-out rounded-md">
+  <button id="button-likes-{{ md5 .Permalink }}" class="flex items-center p-3 mr-6 transition duration-300 ease-in-out bg-gray-100 rounded-md hover:bg-white">
     <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
     </svg>
     <span id="webmentions-total-likes" class="mr-1"></span>
   </button>
-  <button id="button-interactions-{{ md5 .Permalink }}" class="flex items-center mr-6 p-3 bg-gray-100 hover:bg-white transition duration-300 ease-in-out rounded-md">
+  <button id="button-interactions-{{ md5 .Permalink }}" class="flex items-center p-3 mr-6 transition duration-300 ease-in-out bg-gray-100 rounded-md hover:bg-white">
     <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
     </svg>
@@ -18,13 +18,13 @@
 
 <template id="reply-template" class="list-none">
   <li class="flex mb-8 text-base">    
-    <a class="js-author flex-shrink-0" href="">
-      <img class="js-avatar w-8 h-8 rounded-full mr-3" alt="" src=""/>
+    <a class="flex-shrink-0 js-author" href="">
+      <img class="w-8 h-8 mr-3 rounded-full js-avatar" alt="" src=""/>
     </a>
     <div>
       <div>
-        <strong><a class="js-author-name no-underline" href=""></a></strong>
-        <small><a class="js-date js-source no-underline ml-2" href=""></a></small>
+        <strong><a class="no-underline js-author-name" href=""></a></strong>
+        <small><a class="ml-2 no-underline js-date js-source" href=""></a></small>
       </div>
       <div class="js-content"></div>
     </div>
@@ -32,12 +32,12 @@
 </template>
 <template id="like-template" class="list-none">
   <li class="flex mb-8 text-base">
-    <a class="js-author flex-shrink-0" href="">
-      <img class="js-avatar w-8 h-8 rounded-full mr-3" alt="" src=""/>
+    <a class="flex-shrink-0 js-author" href="">
+      <img class="w-8 h-8 mr-3 rounded-full js-avatar" alt="" src=""/>
     </a>
-    <a class="js-source no-underline" href="">
+    <a class="no-underline js-source" href="">
       <span class="js-sentence js-author-name" href=""></span>
-      <small class="js-date ml-2" href=""></small>
+      <small class="ml-2 js-date" href=""></small>
     </a>
   </li> 
 </template>
